@@ -72,6 +72,7 @@ Run the following command to install the dependencies:
 ## Usage
 
     usage: audio_to_text.py [-h] [-o OUTPUT] [-l LANGUAGE] input
+    sample: (make sure you are in the src folder) py audio_to_text.py videoplayback.wav
 
     Converts an audio file to text.
 
