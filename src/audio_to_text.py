@@ -52,7 +52,7 @@ class AudioToText:
 
         fullText = ""
         print("Translating chunks into text...")
-        for i in progressbar.progressbar(range(len(chunks)), widgets=pBarLayout):
+        for i in range(len(chunks)):
             chunk = chunks[i]
             obj = chunk.export(format="wav")
 
