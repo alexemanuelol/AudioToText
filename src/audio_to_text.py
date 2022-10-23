@@ -3,9 +3,6 @@
 import argparse
 import os
 import pathlib
-
-import progressbar
-
 import speech_recognition as sr
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
@@ -46,9 +43,6 @@ class AudioToText:
                                     min_silence_len=self.minSilenceLen,
                                     silence_thresh=silenceThresh,
                                     keep_silence=self.keepSilence)
-
-        # Progressbar layout
-        pBarLayout = [" [", progressbar.Timer(), "] ", progressbar.Bar(), " (", progressbar.ETA(), ") "]
 
         fullText = ""
         print("Translating chunks into text...")
@@ -96,14 +90,14 @@ if __name__ == "__main__":
     description = "Converts an audio file to text."
     parser = argparse.ArgumentParser(prog=os.path.basename(__file__), description=description)
 
-    parser.add_argument(dest="input", help="The input audio file.")
-    #parser.add_argument("-i", "--input", help="The input audio file.", required=True)
+    # parser.add_argument(dest="input", help="The input audio file.")
+    # parser.add_argument("-i", "--input", help="The input audio file.", required=True)
     parser.add_argument("-o", "--output", help="The output file for the text. Default 'outputText.txt'")
     parser.add_argument("-l", "--language", help="See 'https://cloud.google.com/speech-to-text/docs/languages' \
                                                 for all possible language codes, Default is en-GB.")
     args = parser.parse_args()
 
-    inputFile = args.input
+    inputFile = 'videoplayback.wav'
     outputFile = args.output
     language = args.language
 
